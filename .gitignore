@@ -1,0 +1,21 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Model weights (if you prefer to store them externally)
+# model/*.h5
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# API and Log files
+*.log
+.env

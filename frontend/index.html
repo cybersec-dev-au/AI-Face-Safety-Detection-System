@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Face Safety Detection System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Face Safety Detection</h1>
+            <p class="subtitle">High-precision real-time safety classification using state-of-the-art computer vision. Detect sobriety instantly with AI.</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Detection Interaction Section -->
+            <section class="card webcam-section">
+                <div class="video-container" id="source-view">
+                    <video id="webcam" autoplay playsinline muted></video>
+                    <canvas id="canvas-overlay"></canvas>
+                    <div id="image-placeholder" style="color: var(--text-secondary); display: none;">
+                        <i class="fa-solid fa-image fa-4x" style="margin-bottom: 20px;"></i>
+                        <p>No preview available</p>
+                    </div>
+                    <img id="image-preview" alt="Preview Image">
+                </div>
+                
+                <div class="controls">
+                    <button id="start-webcam" class="primary">
+                        <i class="fa-solid fa-camera"></i> Start Webcam
+                    </button>
+                    <button id="capture-frame" style="display:none;">
+                        <i class="fa-solid fa-bolt"></i> Capture Frame
+                    </button>
+                    <label for="image-upload" class="button">
+                        <i class="fa-solid fa-upload" style="margin-right: 8px;"></i> Upload Image
+                    </label>
+                    <input type="file" id="image-upload" accept="image/*" style="display:none;">
+                    <button id="analyze-upload" class="primary" style="display:none;">
+                        <i class="fa-solid fa-microscope"></i> Analyze Image
+                    </button>
+                    <div class="loading-spinner" id="spinner"></div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="card results-panel">
+                <div class="status-indicator">
+                    <span class="label-title">Detection Result</span>
+                    <div class="prediction-value" id="prediction-label">---</div>
+                    <p id="prediction-msg" style="color: var(--text-secondary); margin-top: 10px; font-size: 0.95rem;">Pending detection...</p>
+                </div>
+
+                <div class="status-indicator">
+                    <span class="label-title">Confidence</span>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                        <span class="confidence-text" id="confidence-percentage">0%</span>
+                        <span class="confidence-text">Reliability Index</span>
+                    </div>
+                    <div class="confidence-bar-container">
+                        <div class="confidence-fill" id="confidence-bar"></div>
+                    </div>
+                </div>
+
+                <div class="status-indicator">
+                    <span class="label-title">System Status</span>
+                    <div id="system-status" style="margin-top: 10px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; justify-content: center;">
+                        <i class="fa-solid fa-circle-dot" style="color: #6366f1;"></i> Connected to Cloud API
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Designed and Developed by Au Amores</p>
+            <p style="margin-top: 10px;">&copy; 2026 AI Face Safety Detection System. Production Ready.</p>
+        </footer>
+    </div>
+
+    <!-- Script imports -->
+    <script src="script.js"></script>
+</body>
+</html>
